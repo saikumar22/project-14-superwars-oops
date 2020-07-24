@@ -42,16 +42,16 @@ class Player {
     view = () => {
         // Accumulate HTML template
         // Type your code here
-        let player = document.createElement('div');
+        let player=document.createElement('div');
         player.classList.add('player');
         player.setAttribute('data-id', this.id);
-        let image = document.createElement('img');
+        let image=document.createElement('img');
         image.setAttribute('src', this.image);
-        let name = document.createElement('div');
-        name.textContent = this.name;
-        let strength = document.createElement('div');
-        strength.textContent = this.strength;
-        strength.className = 'strength';
+        let name=document.createElement('div');
+        name.textContent=this.name;
+        let strength=document.createElement('div');
+        strength.textContent=this.strength;
+        strength.classList='strength';
         player.append(image, name, strength);
         return player;
     }
@@ -63,9 +63,9 @@ class Superwar {
     // Create a field players 
     // Use Map method to loop through players argument and create new players
     // Type your code here
-    this.players = players.map((player, i) => {
-        let type = (i % 2 == 0) ? 'hero' : 'villain';
-        return new Player(i, player, type); 
+    this.players=players.map((player,n) => {
+        let type=(n%2==0)?'hero':'villain';
+        return new Player(n, player, type); 
         });  
     }
 
